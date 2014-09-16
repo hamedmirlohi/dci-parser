@@ -11,14 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916004445) do
+ActiveRecord::Schema.define(version: 20140916041507) do
 
   create_table "packets", force: true do |t|
     t.integer  "parsed_file_id"
-    t.integer  "index"
-    t.integer  "payload",        limit: 8
     t.string   "type"
-    t.datetime "time"
+    t.integer  "time"
+    t.integer  "padding",                     default: 0, null: false
+    t.integer  "tms_state"
+    t.integer  "tdi_state"
+    t.integer  "tdo_state"
+    t.integer  "trigger_state"
+    t.integer  "null_set_off0"
+    t.integer  "arb_req_set_off1"
+    t.integer  "access_control_set_off6"
+    t.integer  "access_control_set_off7"
+    t.integer  "access_control_set_off8"
+    t.integer  "access_control_set_off9"
+    t.integer  "pmc_handshake_ack_set_off10"
+    t.integer  "pmc_handshake_en_set_off10"
+    t.integer  "outband_padding_set_off10"
+    t.integer  "outband_packing_set_off10"
+    t.integer  "arb_req_reg"
+    t.integer  "arb_grant_reg"
+    t.integer  "fuse_trap_enable"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +44,14 @@ ActiveRecord::Schema.define(version: 20140916004445) do
   create_table "parsed_files", force: true do |t|
     t.string   "name"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payloads", force: true do |t|
+    t.integer  "packet_id"
+    t.integer  "value",      limit: 8, null: false
+    t.integer  "index",                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

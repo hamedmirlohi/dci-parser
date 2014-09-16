@@ -1,5 +1,6 @@
 class Packet < ActiveRecord::Base
   belongs_to :parsed_file
+  has_many :payloads, inverse_of: :packet, dependent: :destroy
 
-  validates :payload, :index, :time, presence: true
+  validates :time, presence: true
 end
