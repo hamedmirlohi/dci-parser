@@ -35,7 +35,7 @@ class FileParser
 
       if current_packet.present? && line.present?
         value = line.strip.to_i(16)
-        current_packet.padding = 1 if counter == 0 && (value / 2**31 == 1)
+        current_packet.extended_header = true if counter == 0 && (value / 2**31 == 1)
         current_packet.payloads << Payload.new(value: value, index: counter)
         counter += 1
       end
