@@ -1,0 +1,3 @@
+class SentPacket < Packet
+
+end

@@ -1,0 +1,28 @@
+<%= flash[:notice] %>
+
+<%= form_tag packets_path, method: :get do %>
+    <div>
+      <%= label_tag :cpu, 'CPU Time' %>
+      <%= number_field_tag :cpu %>
+    </div>
+
+    <div>
+      <%= check_box_tag :sent %>
+      <%= label_tag :sent, 'Sent' %>
+    </div>
+
+    <div>
+      <%= check_box_tag :received %>
+      <%= label_tag :received, 'Received' %>
+    </div>
+
+    <%= submit_tag 'Submit' %>
+<% end %>
+
+<ul>
+  <% @packets.each do |packet| %>
+    <li>
+      <span><%= packet.payload.to_s(16) %></span>
+    </li>
+  <% end %>
+</ul>

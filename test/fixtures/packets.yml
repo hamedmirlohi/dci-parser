@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parsed_file_id: 
+  index: 1
+  payload: MyString
+  type: 
+  time: 2014-09-15 17:44:45
+
+two:
+  parsed_file_id: 
+  index: 1
+  payload: MyString
+  type: 
+  time: 2014-09-15 17:44:45
