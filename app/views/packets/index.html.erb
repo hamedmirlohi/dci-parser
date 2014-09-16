@@ -1,28 +1,73 @@
-<%= flash[:notice] %>
+<%= form_tag packets_path, method: :get, role: 'form', class: 'form-horizontal' do %>
+  <div class="row">
+    <fieldset class="col-md-3">
+      <legend>Packet Type</legend>
 
-<%= form_tag packets_path, method: :get do %>
-    <div>
-      <%= label_tag :null_set_off0, 'null_set_off0' %>
-      <%= number_field_tag :null_set_off0 %>
+      <div class="form-group">
+        <div class="col-md-6">
+          <%= check_box_tag :sent, 1, params[:sent].present? %>
+          <%= label_tag :sent, 'Sent' %>
+        </div>
+
+        <div class="col-md-6">
+          <%= check_box_tag :received, 1, params[:received].present? %>
+          <%= label_tag :received, 'Received' %>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="row">
+    <fieldset class="col-md-3">
+      <legend>Setting</legend>
+
+      <div class="form-group">
+        <%= label_tag :null_set_off0, 'null_set_off0', class: 'control-label col-md-4' %>
+        <div class="col-md-4">
+          <%= number_field_tag :null_set_off0, params[:null_set_off0], class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :null_set_off0, 'null_set_off0', class: 'control-label col-md-4' %>
+        <div class="col-md-4">
+          <%= number_field_tag :null_set_off0, params[:null_set_off0], class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :null_set_off0, 'null_set_off0', class: 'control-label col-md-4' %>
+        <div class="col-md-4">
+          <%= number_field_tag :null_set_off0, params[:null_set_off0], class: 'form-control' %>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <fieldset class="col-md-4">
+      <legend>Message</legend>
+    </fieldset>
+
+    <fieldset class="col-md-4">
+      <legend>Status</legend>
+    </fieldset>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= submit_tag 'Submit', class: 'btn btn-primary' %>
+      <%= link_to 'Clear', packets_path, class: 'btn btn-default' %>
     </div>
-
-    <div>
-      <%= check_box_tag :sent %>
-      <%= label_tag :sent, 'Sent' %>
-    </div>
-
-    <div>
-      <%= check_box_tag :received %>
-      <%= label_tag :received, 'Received' %>
-    </div>
-
-    <%= submit_tag 'Submit' %>
+  </div>
 <% end %>
 
-<ul>
-  <% @packets.each do |packet| %>
-    <li>
-      <span><%= packet.time %></span>
-    </li>
-  <% end %>
-</ul>
+
+<div class="row">
+  <ul>
+    <% @packets.each do |packet| %>
+        <li>
+          <span><%= packet.time %></span>
+        </li>
+    <% end %>
+  </ul>
+</div>
