@@ -13,10 +13,6 @@ class ParsedFile < ActiveRecord::Base
   def content=(file)
     filename = file.original_filename
     self.name = filename if name.blank?
-    directory = 'public/data'
-    path = File.join(directory, filename)
-    data = file.read
-    File.open(path, 'wb') { |f| f.write(data) }
-    super(data)
+    super(file.read)
   end
 end
