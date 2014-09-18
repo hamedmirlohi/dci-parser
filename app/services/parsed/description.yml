@@ -1,16 +1,16 @@
 parsed:
   send:
     setting:
-      - null_set_off0
-      - arb_req_set_off1
-      - access_control_set_off6
-      - access_control_set_off7
-      - access_control_set_off8
-      - access_control_set_off9
-      - pmc_handshake_ack_set_off10
-      - pmc_handshake_en_set_off10
-      - outband_padding_set_off10
-      - outband_packing_set_off10
+      - "null"
+      - arb_req
+      - access_control_6
+      - access_control_7
+      - access_control_8
+      - access_control_9
+      - pmc_handshake_ack
+      - pmc_handshake_en
+      - outband_padding
+      - outband_packing
     message:
       - tms_state
       - tdi_state

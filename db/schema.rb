@@ -17,24 +17,24 @@ ActiveRecord::Schema.define(version: 20140916041507) do
     t.integer  "parsed_file_id"
     t.string   "type"
     t.integer  "time"
-    t.boolean  "extended_header",                       default: false, null: false
-    t.integer  "tms_state",                   limit: 8
-    t.integer  "tdi_state",                   limit: 8
-    t.integer  "tdo_state",                   limit: 8
-    t.integer  "trigger_state",               limit: 8
-    t.integer  "null_set_off0",               limit: 8
-    t.integer  "arb_req_set_off1",            limit: 8
-    t.integer  "access_control_set_off6",     limit: 8
-    t.integer  "access_control_set_off7",     limit: 8
-    t.integer  "access_control_set_off8",     limit: 8
-    t.integer  "access_control_set_off9",     limit: 8
-    t.integer  "pmc_handshake_ack_set_off10", limit: 8
-    t.integer  "pmc_handshake_en_set_off10",  limit: 8
-    t.integer  "outband_padding_set_off10",   limit: 8
-    t.integer  "outband_packing_set_off10",   limit: 8
-    t.integer  "arb_req_reg",                 limit: 8
-    t.integer  "arb_grant_reg",               limit: 8
-    t.integer  "fuse_trap_enable",            limit: 8
+    t.boolean  "extended_header",             default: false, null: false
+    t.integer  "null",              limit: 8
+    t.integer  "arb_req",           limit: 8
+    t.integer  "access_control_6",  limit: 8
+    t.integer  "access_control_7",  limit: 8
+    t.integer  "access_control_8",  limit: 8
+    t.integer  "access_control_9",  limit: 8
+    t.integer  "pmc_handshake_ack", limit: 8
+    t.integer  "pmc_handshake_en",  limit: 8
+    t.integer  "outband_padding",   limit: 8
+    t.integer  "outband_packing",   limit: 8
+    t.integer  "tms_state",         limit: 8
+    t.integer  "tdi_state",         limit: 8
+    t.integer  "tdo_state",         limit: 8
+    t.integer  "trigger_state",     limit: 8
+    t.integer  "arb_req_reg",       limit: 8
+    t.integer  "arb_grant_reg",     limit: 8
+    t.integer  "fuse_trap_enable",  limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end

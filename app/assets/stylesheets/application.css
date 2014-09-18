@@ -21,3 +21,11 @@ body {
 .starter-template {
     padding: 40px 15px;
 }
+
+.input-group-addon {
+    /*padding: 6px;*/
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
