@@ -3,7 +3,7 @@ class PacketsController < ApplicationController
     @packets = Packet.all
     @packets = @packets.where(type: 'SentPacket') if params[:sent].present?
     @packets = @packets.where(type: 'ReceivedPacket') if params[:received].present?
-    @packets = @packets.where(null_set_off0: params[:null_set_off0]) if params[:null_set_off0].present?
+    @packets = @packets.where(null_set_off0: params[:null_set_off0].to_i(16)) if params[:null_set_off0].present?
 	@packets = @packets.where(arb_req_set_off1: params[:arb_req_set_off1]) if params[:arb_req_set_off1].present?
     @packets = @packets.where(access_control_set_off6: params[:access_control_set_off6]) if params[:access_control_set_off6].present?
     @packets = @packets.where(access_control_set_off7: params[:access_control_set_off7]) if params[:access_control_set_off7].present?
