@@ -35,6 +35,83 @@ ActiveRecord::Schema.define(version: 20140916041507) do
     t.integer  "arb_req_reg",       limit: 8
     t.integer  "arb_grant_reg",     limit: 8
     t.integer  "fuse_trap_enable",  limit: 8
+    t.integer  "def cltap",         limit: 8
+    t.integer  "S0Ix",              limit: 8
+    t.integer  "handshake",         limit: 8
+    t.integer  "host_port",         limit: 8
+    t.integer  "protocol_E",        limit: 8
+    t.integer  "discard_bssb",      limit: 8
+    t.integer  "discard_IOSF",      limit: 8
+    t.integer  "discard_bridge",    limit: 8
+    t.integer  "latch_bridge",      limit: 8
+    t.integer  "prdy",              limit: 8
+    t.integer  "preq",              limit: 8
+    t.integer  "tap_ready",         limit: 8
+    t.integer  "cpu_pwr_good",      limit: 8
+    t.integer  "core_pwrgood",      limit: 8
+    t.integer  "low_pow_state",     limit: 8
+    t.integer  "system_reset",      limit: 8
+    t.integer  "latch_sys_state",   limit: 8
+    t.integer  "prep_type",         limit: 8
+    t.integer  "boot_type",         limit: 8
+    t.integer  "dbc_out",           limit: 8
+    t.integer  "dbc_in",            limit: 8
+    t.integer  "exi_stat",          limit: 8
+    t.integer  "handler_id",        limit: 8
+    t.integer  "jtag_muxsel",       limit: 8
+    t.integer  "enable_jtag",       limit: 8
+    t.integer  "disable_jtag",      limit: 8
+    t.integer  "free_run_clk",      limit: 8
+    t.integer  "flush",             limit: 8
+    t.integer  "force_wb_t_16",     limit: 8
+    t.integer  "force_st_t_16",     limit: 8
+    t.integer  "force_wb_16",       limit: 8
+    t.integer  "force_st_16",       limit: 8
+    t.integer  "duty_cycle",        limit: 8
+    t.integer  "div_1_2_3_4",       limit: 8
+    t.integer  "ten_n_first",       limit: 8
+    t.integer  "tdo_recovery",      limit: 8
+    t.integer  "jtag_chain",        limit: 8
+    t.integer  "clk_src_18",        limit: 8
+    t.integer  "scan_trig_0",       limit: 8
+    t.integer  "scan_trig_1",       limit: 8
+    t.integer  "scan_trig_2",       limit: 8
+    t.integer  "scan_trig_3",       limit: 8
+    t.integer  "deAssert_trst",     limit: 8
+    t.integer  "assert_preq",       limit: 8
+    t.integer  "reset_button_21",   limit: 8
+    t.integer  "power_button_21",   limit: 8
+    t.integer  "prdy_forwarding",   limit: 8
+    t.integer  "reset_break_21",    limit: 8
+    t.integer  "PWRBRK1_21",        limit: 8
+    t.integer  "PWRBRK2_21",        limit: 8
+    t.integer  "PWRBRK3_21",        limit: 8
+    t.integer  "plat_tap_power",    limit: 8
+    t.integer  "cpu_tap_pow",       limit: 8
+    t.integer  "SI0x_22",           limit: 8
+    t.integer  "m_state_22",        limit: 8
+    t.integer  "platfrom_reset",    limit: 8
+    t.integer  "cpu_warm_rst_22",   limit: 8
+    t.integer  "nc_warm_rst_22",    limit: 8
+    t.integer  "soc_warm_rst_22",   limit: 8
+    t.integer  "jtag_event_22",     limit: 8
+    t.integer  "exi_bridge_22",     limit: 8
+    t.integer  "timeout_22",        limit: 8
+    t.integer  "prdy_22",           limit: 8
+    t.integer  "pkt_cmpl_23",       limit: 8
+    t.integer  "plat_tap_row",      limit: 8
+    t.integer  "cpu_tap_row",       limit: 8
+    t.integer  "SI0x_23",           limit: 8
+    t.integer  "m_state_23",        limit: 8
+    t.integer  "small_core_rst",    limit: 8
+    t.integer  "platform_reset",    limit: 8
+    t.integer  "cpu_warm_rst_23",   limit: 8
+    t.integer  "nc_warm_rst_23",    limit: 8
+    t.integer  "soc_warm_23",       limit: 8
+    t.integer  "jtag_evnt_23",      limit: 8
+    t.integer  "exi_bridge_23",     limit: 8
+    t.integer  "timeout_23",        limit: 8
+    t.integer  "prdy_23",           limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
