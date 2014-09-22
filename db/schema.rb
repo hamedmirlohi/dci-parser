@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140916041507) do
     t.integer  "arb_req_reg",       limit: 8
     t.integer  "arb_grant_reg",     limit: 8
     t.integer  "fuse_trap_enable",  limit: 8
-    t.integer  "def cltap",         limit: 8
+    t.integer  "cltap",             limit: 8
     t.integer  "S0Ix",              limit: 8
     t.integer  "handshake",         limit: 8
     t.integer  "host_port",         limit: 8

@@ -22,7 +22,7 @@ parsed:
       - arb_req_reg
       - arb_grant_reg
       - fuse_trap_enable
-      - def cltap # start here
+      - cltap
       - S0Ix
       - handshake
       - host_port
