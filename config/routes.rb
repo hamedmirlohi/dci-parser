@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :parsed_files
-  resources :packets
+  # resources :packets
+  match 'packets', to: 'packets#index', via: [:get, :post]
 
   root 'packets#index'
 

@@ -13,7 +13,7 @@
     <% @parsed_files.each do |parsed_file| %>
       <tr>
         <td><%= parsed_file.name %></td>
-        <td><%= parsed_file.content %></td>
+        <td><pre><code><%= parsed_file.content %></code></pre></td>
         <td><%= link_to 'Show', parsed_file %></td>
         <td><%= link_to 'Edit', edit_parsed_file_path(parsed_file) %></td>
         <td><%= link_to 'Destroy', parsed_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>

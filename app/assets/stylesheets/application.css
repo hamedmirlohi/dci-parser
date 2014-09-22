@@ -18,6 +18,10 @@ body {
     padding-top: 50px;
 }
 
+table {
+    margin-top: 30px;
+}
+
 .starter-template {
     padding: 40px 15px;
 }
@@ -28,4 +32,8 @@ body {
 
 .form-horizontal .control-label {
     text-align: left;
+}
+
+input[type=checkbox].checkbox-adjust {
+    margin-top: 12px;
 }
