@@ -62,7 +62,8 @@
         <tr>
           <td><%= packet.time %></td>
           <% displayed.each do |display| %>
-              <th><%= packet.send(display).to_i.to_s(16) %></th>
+              <% output = packet.send(display) %>
+              <th><%= output.to_i.to_s(16) if output %></th>
           <% end %>
         </tr>
       <% end %>
