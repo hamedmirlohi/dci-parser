@@ -5,7 +5,7 @@ module Parsed
         {
           0 => :Setting,
           1 => :Message
-        }[apply_mask]
+        }.fetch(apply_mask, :Null)
       end
 
       def apply_mask

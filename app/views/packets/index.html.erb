@@ -48,6 +48,27 @@
 <% end %>
 
 <div class="row">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Setting</th>
+        <th>Message</th>
+        <th>Status</th>
+        <th>Writeback</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @packets.select { |p| p.setting? }.size %></td>
+        <td><%= @packets.select { |p| p.message? }.size %></td>
+        <td><%= @packets.select { |p| p.status? }.size %></td>
+        <td><%= @packets.select { |p| p.writeback? }.size %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="row">
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -70,3 +91,29 @@
     </tbody>
   </table>
 </div>
+
+<% if @breakdown.present? %>
+  <div class="row">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Count</th>
+          <% displayed.each do |display| %>
+              <th><%= display %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% @breakdown.each do |item| %>
+          <tr>
+            <td><%= item.total %></td>
+            <% displayed.each do |display| %>
+                <% output = item.send(display) %>
+                <th><%= output.to_i.to_s(16) if output %></th>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

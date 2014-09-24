@@ -33,7 +33,7 @@ class FileParser
         next
       end
 
-      if current_packet.present? && line.present?
+      if current_packet.present? && line.present? && counter >= 0 && counter <= 15
         value = line.strip.to_i(16)
         current_packet.extended_header = true if counter == 0 && (value / 2**31 == 1)
         current_packet.payloads << Payload.new(value: value, index: counter)
@@ -44,11 +44,8 @@ class FileParser
     { send: sent, receive: received }.each do |type, packets|
       packets.each do |packet|
         parsed = Parsed::Packet.create(type, packet.payloads.map(&:value))
-        pairs = parsed.class.name.underscore.split('/').reduce(description) do |memo, e|
-          memo[e]
-        end.map do |e|
-          [e, parsed.send(e)]
-        end
+        methods = parsed.class.name.underscore.split('/').reduce(description) { |memo, e| memo[e] }
+        pairs = Array.wrap(methods).map { |e| [e, parsed.send(e)] }
         packet.assign_attributes(Hash[pairs])
         packet.save!
       end

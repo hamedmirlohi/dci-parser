@@ -6,7 +6,7 @@ module Parsed
           0 => :Status,
           1 => :Writeback,
           0x30 => :Trace
-        }[apply_mask]
+        }.fetch(apply_mask, :Null)
       end
 
       def apply_mask
