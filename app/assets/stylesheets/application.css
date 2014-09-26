@@ -37,3 +37,7 @@ table {
 input[type=checkbox].checkbox-adjust {
     margin-top: 12px;
 }
+
+td.centered {
+	text-align: center;
+}

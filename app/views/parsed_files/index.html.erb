@@ -1,25 +1,26 @@
-<h1>Listing parsed_files</h1>
+<h1>Parsed Files</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @parsed_files.each do |parsed_file| %>
+<% if @parsed_files.present? %>
+  <table class="table table-bordered table-striped">
+    <thead>
       <tr>
-        <td><%= parsed_file.name %></td>
-        <td><%= link_to 'Show', parsed_file %></td>
-        <td><%= link_to 'Edit', edit_parsed_file_path(parsed_file) %></td>
-        <td><%= link_to 'Destroy', parsed_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @parsed_files.each do |parsed_file| %>
+        <tr>
+          <td><%= parsed_file.name %></td>
+          <td class="centered"><%= link_to 'Show', parsed_file %></td>
+          <td class="centered"><%= link_to 'Destroy', parsed_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 
 <br>
 
-<%= link_to 'New Parsed file', new_parsed_file_path %>
+<%= link_to 'New Parsed file', new_parsed_file_path, class: 'btn btn-primary' %>
