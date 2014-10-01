@@ -3,14 +3,61 @@ parsed:
     setting:
       - "null"
       - arb_req
-      - access_control_6
-      - access_control_7
-      - access_control_8
-      - access_control_9
-      - pmc_handshake_ack
-      - pmc_handshake_en
-      - outband_padding
-      - outband_packing
+      - access_vec0
+      - access_vec1
+      - access_vec2
+      - access_vec3
+      - pmc_hand_ack
+      - pmc_hand_en
+      - outband_pad
+      - outband_pack
+      - transport
+      - jtag_muxsel
+      - enable_jtag_s
+      - disable_jtag_s
+      - free_run_clk
+      - flush_wb
+      - force_wb_to
+      - force_st_to
+      - force_wb
+      - force_st
+      - jtag_clk_src
+      - jtag_duty
+      - jtag_second
+      - jtag_first
+      - jtag_tdo_rec
+      - jtag_jtag_chain
+      - jtag_to_clk_src
+      - jtag_to_sec_pre
+      - jtag_to_fir_pre
+      - scan_trig0
+      - scan_trig1
+      - scan_trig2
+      - scan_trig3
+      - jtag_trst
+      - jtag_preq
+      - jtag_reset
+      - jtag_power
+      - jtag_prdy
+      - jtag_rst_break
+      - jtag_pwrbrk1
+      - jtag_pwrbrk2
+      - jtag_pwrbrk3
+      - jtag_pkt_comp
+      - jtag_tap_pwr
+      - jtag_cpu_tap
+      - jtag_S0Ix
+      - jtag_mState
+      - jtag_small_core
+      - jtag_plat_rst
+      - jtag_cpu_warm
+      - jtag_nc_warm
+      - jtag_soc_warm
+      - jtag_handler
+      - jtag_exi_bridge
+      - jtag_timeout
+      - jtag_prdy
+
     message:
       - tms_state
       - tdi_state
